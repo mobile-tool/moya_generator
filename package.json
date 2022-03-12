@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/mobile-tool/moya_generator#readme",
   "bin": {
-    "hello": "./bin/index.js"
+    "moya-gen": "./bin/index.js"
   },
   "dependencies": {
     "boxen": "^4.0.0",
     "chalk": "^2.4.2",
     "dotenv": "^8.0.0",
+    "parse-curl": "^0.2.6",
     "yargs": "^13.2.4"
   }
 }
