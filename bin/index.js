@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const yargs = require("yargs");
 const dotenv = require( "dotenv");
-const parse = require('./pare-json');
+const parse = require('@bany/curl-to-json');
 const info = require('./info');
 
 dotenv.config();
@@ -14,49 +14,11 @@ const options = yargs
     .argv;
 
 const out = parse(options.c);
-
-// let url = new URL(out.url);
-
-// const pareOutput = `
-// public enum GitHub {
-//     case zen
-// }
-
-// extension GitHub: TargetType {
-//     public var baseURL: URL { URL(string: "${out.url}")! }
-//     public var path: String {
-//         switch self {
-//         case .zen:
-//             return "/zen"
-//         }
-//     }
-
-//     public var method: Moya.Method { .get }
-
-//     public var task: Task {
-//         switch self {
-//         case .userRepositories:
-//             return .requestParameters(parameters: ["sort": "pushed"], encoding: URLEncoding.default)
-//         default:
-//             return .requestPlain
-//         }
-//     }
-//     public var validationType: ValidationType {
-//         switch self {
-//         case .zen:
-//             return .successCodes
-//         default:
-//             return .none
-//         }
-//     }
-//     public var sampleData: Data {
-//         return Data()
-//     }
-//     public var headers: [String: String]? { nil }
-
-// }
-// `;
-
-console.log(JSON.stringify(out, null, 2))
-
-// console.log(pareOutput);
+console.log(out)
+// var out = parse(`curl -X --request GET 'http://localhost:3001/search?search=react&asdfa=asfdaf' \
+// --header 'xapi-key: 21432139847290402402190' \
+// --header 'Content-Type: text/html' \
+// --data-raw '{
+//     "name": "string",
+//     "name2": "string"
+// }'`);
